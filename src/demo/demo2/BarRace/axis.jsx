@@ -1,7 +1,7 @@
 import React from 'react'
 
 // 坐标轴todo
-export default function axis() {
+export default function Axis() {
   return (
     <g>
       

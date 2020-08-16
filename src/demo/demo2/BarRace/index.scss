@@ -1,5 +1,10 @@
-.bar-race-container{
+.bar-race-container {
   .rect {
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+  }
+
+  .text {
     transition-duration: 0.25s;
   }
 }

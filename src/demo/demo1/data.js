@@ -1,9 +1,6 @@
-const d3 = require("d3");
-
 export const margin = { top: 25, right: 50, bottom: 50, left: 50 };
 export const height = 300;
 export const width = 695;
-
 
 export const initialData = [
   {
@@ -64,24 +61,21 @@ export const colorMap = {
 
 function getSeries(data) {
   const columns = Object.keys(data[0]);
-  return d3.stack().keys(columns.slice(1))(data);
+  return window.d3.stack().keys(columns.slice(1))(data);
 }
 
 export function generateScale(data) {
   const series = getSeries(data);
   return {
     series,
-    xScale: d3
+    xScale: window.d3
       .scaleBand()
       .domain(data.map((d) => d.category))
       .range([0, width])
       .padding(0.1),
-    yScale: d3
+    yScale: window.d3
       .scaleLinear()
-      .domain([
-        0,
-        d3.max(series, (d) => d3.max(d, (d) => d[1])),
-      ])
+      .domain([0, window.d3.max(series, (d) => window.d3.max(d, (d) => d[1]))])
       .range([height, 0]),
   };
 }

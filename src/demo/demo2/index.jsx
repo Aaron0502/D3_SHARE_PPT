@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import createBarRace from "./createBarRace";
-import BarRace from './BarRace'
+// import BarRace from './BarRace'
 
 export default function Demo1() {
   const container = useRef(null);

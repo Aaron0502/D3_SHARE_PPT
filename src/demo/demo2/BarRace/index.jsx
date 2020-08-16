@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Bar from "./Bar";
 import Label from "./Label";
 import Ticker from "./Ticker";
+import Axis from './Axis'
 import { width, height, x, duration } from "../data";
 import data from "../dataSource";
 import "./index.scss";
@@ -22,7 +23,6 @@ export default function BarRace() {
         await sleep(duration);
       }
     }
-
     replay();
     replayRef.current = replay;
   }, []);
@@ -35,6 +35,7 @@ export default function BarRace() {
             <Bar data={barData} />
             <Label data={barData} />
             <Ticker data={barData} />
+            <Axis data={barData}/>
           </>
         )}
       </svg>

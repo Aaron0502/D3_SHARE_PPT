@@ -1,8 +1,6 @@
 import { width, height, margin, generateScale, colorMap } from "./data";
 
-const d3 = require("d3");
-
-const svg = d3
+const svg = window.d3
   .create("svg")
   .attr("viewBox", [0, 0, width, height])
   .attr("width", width + margin.left)

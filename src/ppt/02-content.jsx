@@ -5,9 +5,9 @@ export default function Content() {
     <section>
       <h3>概览</h3>
       <ul>
-        <li>d3简介</li>
+        <li>D3简介</li>
         <li>Thinking with Joins</li>
-        <li>Think more</li>
+        <li>Demo展示</li>
         <li>业务实践</li>
       </ul>
     </section>
