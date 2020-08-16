@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import Reveal from "reveal.js";
+import RevealHighlight from 'reveal.js/plugin/highlight/highlight'
+import "reveal.js/dist/reveal.css";
+import "reveal.js/dist/theme/night.css";
+import "reveal.js/plugin/highlight/monokai.css"
+
+
+const ppt = require.context("./ppt", false, /\.jsx$/)
 
 function App() {
+  useEffect(() => {
+    Reveal.initialize({
+      center: true,
+      hash: true,
+      plugins: [ RevealHighlight ]
+      // transition: 'slide',
+      // transitionSpeed: 'slow',
+      // backgroundTransition: 'slide'
+    });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="slides">
+      {
+        ppt.keys().map(key => {
+          const Detail = ppt(key).default
+          return <Detail key={key}/>
+        })
+      }
     </div>
   );
 }

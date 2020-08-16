@@ -1,0 +1,12 @@
+.stack-chart{
+  transition-duration: 0.5s;
+}
+
+/* .rect-exit-active {
+  width: 0;
+  transition: width 500ms ease-in;
+} */
+
+.g-exit rect{
+  width: 0;
+}
